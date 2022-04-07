@@ -11,7 +11,7 @@ import numpy as np
 
 def teachable_machine_classification(img):
     # So we load the model
-    model = keras.models.load_model(r"C:\Users\bhavy\OneDrive\Desktop\streamlit-demo\keras_model.h5")
+    model = keras.models.load_model(r"/app/brain-tumor-classification/keras_model.h5")
 
     # Now we create the array of the right shape to feed into the keras model
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
