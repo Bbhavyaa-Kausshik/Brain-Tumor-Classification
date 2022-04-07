@@ -34,7 +34,7 @@ def teachable_machine_classification(img):
 
 import time
 
-uploaded_file = st.file_uploader("Choose a brain MRI ...", type="jpg")
+uploaded_file = st.file_uploader("Choose a brain MRI ...", type="jpg, jpeg, png")
 if uploaded_file is not None:
         image = Image.open(uploaded_file)
         st.image(image, caption='Uploaded MRI.', use_column_width=True)
