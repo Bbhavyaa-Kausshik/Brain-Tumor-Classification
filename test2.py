@@ -6,12 +6,12 @@ import keras
 from PIL import Image, ImageOps
 import numpy as np
 
-keras_model = (r"C:\Users\bhavy\Downloads\AI Model\keras_model.h5")
+#keras_model = (r"C:\Users\bhavy\Downloads\AI Model\keras_model.h5")
 
 
-def teachable_machine_classification(img, weights_file):
+def teachable_machine_classification(img):
     # So we load the model
-    model = keras.models.load_model(weights_file)
+    model = keras.models.load_model(r"C:\Users\bhavy\OneDrive\Desktop\streamlit-demo\keras_model.h5")
 
     # Now we create the array of the right shape to feed into the keras model
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
@@ -40,7 +40,7 @@ if uploaded_file is not None:
         st.image(image, caption='Uploaded MRI.', use_column_width=True)
         st.write("")
         st.write("Please wait for a moment...")
-        label = teachable_machine_classification(image, r"C:\Users\bhavy\Downloads\AI Model\keras_model.h5")
+        label = teachable_machine_classification(image)
         my_bar = st.progress(0)
         for percent_complete in range(100):
             time.sleep(0.1)
